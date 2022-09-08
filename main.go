@@ -115,8 +115,17 @@ func multipleip3(ips string) (startx uint32, endx uint32, err error) {
 		return 0, 0, errors.New(ips + " ip parse error")
 	}
 	a, err := strconv.Atoi(strings.Split(host, ".")[0])
+	if err != nil {
+		return 0, 0, errors.New(ips + " ip parse error")
+	}
 	b, err := strconv.Atoi(strings.Split(host, ".")[1])
+	if err != nil {
+		return 0, 0, errors.New(ips + " ip parse error")
+	}
 	c, err := strconv.Atoi(strings.Split(host, ".")[2])
+	if err != nil {
+		return 0, 0, errors.New(ips + " ip parse error")
+	}
 	d, err := strconv.Atoi(strings.Split(host, ".")[3])
 	if err != nil {
 		return 0, 0, errors.New(ips + " ip parse error")
